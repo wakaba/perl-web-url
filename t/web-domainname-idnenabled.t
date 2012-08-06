@@ -7,14 +7,13 @@ use base qw(Test::Class);
 use Web::DomainName::IDNEnabled;
 use Test::More;
 
-sub _versions : Test(2) {
+sub _versions : Test(1) {
   ok $Web::DomainName::IDNEnabled::VERSION;
-  ok $Web::DomainName::IDNEnabled::TIMESTAMP;
 } # _versions
 
 sub _tlds : Test(2) {
   ok $Web::DomainName::IDNEnabled::TLDs->{jp};
-  ok !$Web::DomainName::IDNEnabled::TLDs->{fr};
+  ok !$Web::DomainName::IDNEnabled::TLDs->{arpa};
 } # _tlds
 
 __PACKAGE__->runtests;
@@ -23,7 +22,7 @@ __PACKAGE__->runtests;
 
 =head1 LICENSE
 
-Copyright 2011 Wakaba <w@suika.fam.cx>.
+Copyright 2011-2012 Wakaba <w@suika.fam.cx>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
