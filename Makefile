@@ -24,7 +24,7 @@ Makefile-setupenv: Makefile.setupenv
 Makefile.setupenv:
 	wget -O $@ https://raw.github.com/wakaba/perl-setupenv/master/Makefile.setupenv
 
-config/perl/libs.txt local-perl generatepm \
+local-perl generatepm \
 perl-exec perl-version pmb-update pmb-install local-submodules \
 lperl lprove \
 : %: Makefile-setupenv
@@ -50,7 +50,7 @@ PERL_ENV = PATH=$(PERL_PATH):$(PATH) PERL5LIB=$(shell cat config/perl/libs.txt)
 
 test: safetest
 
-test-deps: carton-install config/perl/libs.txt
+test-deps: local-submodules pmb-install
 
 safetest: test-deps show-perl-version show-unicore-version safetest-main
 
