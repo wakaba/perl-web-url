@@ -30,8 +30,11 @@ $root_d->subdir ('t', 'data')->recurse (callback => sub {
     },
     urls => {
         git => {
-            GitHub => q<https://github.com/wakaba/perl-weburl>,
-            Suika => q<http://suika.fam.cx/gate/git/wi/web/perl-weburl.git/tree>,
+            GitHub => q<https://github.com/wakaba/perl-web-url>,
+            Suika => q<http://suika.fam.cx/gate/git/wi/web/perl-web-url.git/tree>,
+        },
+        ci => {
+            "Travis CI" => q<http://travis-ci.org/wakaba/perl-web-url>,
         },
     },
 };

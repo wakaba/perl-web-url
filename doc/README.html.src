@@ -101,8 +101,8 @@
   <span lang=ja>最新版は Git リポジトリーから入手できます。</span>
 
 <ul>
-<li><code class=uri>&lt;<a href="https://github.com/wakaba/perl-weburl">https://github.com/wakaba/perl-weburl</a>></code>
-<li><code class=uri>&lt;<a href="http://suika.fam.cx/gate/git/wi/web/perl-weburl.git/tree">http://suika.fam.cx/gate/git/wi/web/perl-weburl.git/tree</a>></code>
+<li><code class=uri>&lt;<a href="https://github.com/wakaba/perl-web-url">https://github.com/wakaba/perl-web-url</a>></code>
+<li><code class=uri>&lt;<a href="http://suika.fam.cx/gate/git/wi/web/perl-web-url.git/tree">http://suika.fam.cx/gate/git/wi/web/perl-web-url.git/tree</a>></code>
 </ul>
 </section>
 

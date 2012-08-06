@@ -12,8 +12,7 @@ all: config/perl/libs.txt \
   lib/Web/URL/Canonicalize.html \
   lib/Web/IPAddr/Canonicalize.html \
   lib/Web/DomainName/Canonicalize.html \
-  lib/Web/DomainName/IDNEnabled.html \
-  lib/Web/Encoding.html
+  lib/Web/DomainName/IDNEnabled.html
 
 ## ------ Deps ------
 
@@ -74,7 +73,6 @@ dist: generatepm
 	$(GENERATEPM_) config/dist/web-domainname-canonicalize.pi dist
 	$(GENERATEPM_) config/dist/web-domainname-idnenabled.pi dist
 	$(GENERATEPM_) config/dist/web-domainname-punycode.pi dist
-	$(GENERATEPM_) config/dist/web-encoding.pi dist
 	$(GENERATEPM_) config/dist/web-ipaddr-canonicalize.pi dist
 	$(GENERATEPM_) config/dist/web-url-canonicalize.pi dist
 

@@ -67,12 +67,13 @@ C<canonicalize_parsed_url>, and C<serialize_parsed_url>.
 
 =head1 TEST CASES
 
-There are several thousands of test cases under the directory
-C<t/data/>.
+There are several thousands of test cases in repository
+<https://github.com/wakaba/tests-web-url>.
 
 =head1 SEE ALSO
 
-Tentative spec for URL canonicalization C<sketch/spec.txt>.
+Tentative spec for URL canonicalization
+<https://github.com/wakaba/tests-web-url/blob/master/spec.txt>.
 
 L<Web::IPAddr::Canonicalize>.
 

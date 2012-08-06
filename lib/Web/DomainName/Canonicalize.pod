@@ -46,7 +46,8 @@ C<undef>.
 
 =head1 SEE ALSO
 
-Tentative spec for URL canonicalization C<sketch/spec.txt>.
+Tentative spec for URL canonicalization
+<https://github.com/wakaba/tests-web-url/blob/master/spec.txt>.
 
 L<Web::IPAddr::Canonicalize>.
 

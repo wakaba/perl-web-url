@@ -1,0 +1,2 @@
+Redirect 301 /www/url/perl-weburl/sketch/spec.txt https://github.com/wakaba/tests-web-url/blob/master/spec.txt
+Redirect 301 /www/url/perl-weburl/t/browsers/ https://github.com/wakaba/tests-web-url/tree/master/browsers
