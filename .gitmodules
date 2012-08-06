@@ -1,0 +1,12 @@
+[submodule "modules/tests-web-url"]
+	path = modules/tests-web-url
+	url = git://github.com/wakaba/tests-web-url.git
+[submodule "modules/web-encodings"]
+	path = modules/web-encodings
+	url = git://github.com/wakaba/perl-web-encodings.git
+[submodule "modules/testdataparser"]
+	path = modules/testdataparser
+	url = git://github.com/wakaba/testdataparser.git
+[submodule "modules/charclass"]
+	path = modules/charclass
+	url = git://github.com/wakaba/perl-charclass.git
