@@ -1,6 +1,9 @@
 Web::URL::Canonicalize - Perl URL Canonicalizer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+These Perl modules parse, resolve, and/or canonicalize URLs in the
+same manner Web browsers do.
+
 * Perl modules
 
 - Web::URL::Canonicalize (lib/Web/URL/Canonicalize.pm)
@@ -10,31 +13,22 @@ Web::URL::Canonicalize - Perl URL Canonicalizer
 
 * Spec
 
-- sketch/spec.txt
+- <https://github.com/wakaba/tests-web-url/blob/master/spec.txt>
 
 * Tests
 
-- t/data/*.dat - URL canonicalization tests
-- t/data/generated/*.dat - IDN in URL canonicalization tests
+- modules/tests-web-url = <https://github.com/wakaba/tests-web-url>
+   - URL/IDN canonicalization tests
+   - Test harnesses for testing your browser
 
 - t/*.t - Test harnesses for Perl modules
-- t/browsers/*.html - Test harnesses for testing your browser
-
-** Test results of browsers
-
-- URL canonicalization tests (about 5000)
--- <http://suika.fam.cx/gate/test-results/list/url-canon-20110731/all>
-- Query character encoding tests (28)
--- <http://suika.fam.cx/gate/test-results/list/url-canon-20110731-charsets/all>
-- IDN canonicalization tests (about 14000)
--- <http://suika.fam.cx/gate/test-results/list/url-canon-20110731-idn/all>
 
 * Distribution
 
 Latest version of these files are available from Git repositories:
 
-- <https://github.com/wakaba/perl-weburl>
-- <http://suika.fam.cx/gate/git/wi/web/perl-weburl.git/tree>
+- <https://github.com/wakaba/perl-web-url>
+- <http://suika.fam.cx/gate/git/wi/web/perl-web-url.git/tree>
 
 * Author
 
