@@ -2,6 +2,7 @@ HARUSAME = harusame
 POD2HTML = pod2html --css "http://suika.fam.cx/www/style/html/pod.css" \
   --htmlroot "../.."
 SED = sed
+GIT = git
 PERL_VERSION = latest
 PROVE = prove
 PERL = perl
@@ -29,6 +30,9 @@ lperl lprove \
 : %: Makefile-setupenv
 	make --makefile Makefile.setupenv $@
 
+git-submodules:
+	$(GIT) submodule update --init
+
 ## ------ Documents ------
 
 doc/README.en.html: doc/README.html.src
@@ -49,7 +53,7 @@ PERL_ENV = PATH=$(PERL_PATH):$(PATH) PERL5LIB=$(shell cat config/perl/libs.txt)
 
 test: safetest
 
-test-deps: local-submodules pmb-install
+test-deps: git-submodules local-submodules pmb-install
 
 safetest: test-deps show-perl-version show-unicore-version safetest-main
 

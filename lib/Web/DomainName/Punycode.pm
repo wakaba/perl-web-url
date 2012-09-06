@@ -1,83 +1,33 @@
 package Web::DomainName::Punycode;
 use strict;
 use warnings;
-our $VERSION = '1.0';
+our $VERSION = '2.0';
 use Encode;
 use Exporter::Lite;
 
 our @EXPORT = qw(encode_punycode decode_punycode);
 
+# Compat
 our $RequestedModule ||= '';
-our $UsedModule;
+our $UsedModule = 'Web::DomainName::Punycode::URI::_punycode';
 
-if ($RequestedModule eq 'Net::LibIDN') {
-  eval q{
-    use Net::LibIDN;
+sub encode_punycode ($) {
+  return undef if not defined $_[0];
+  return '' unless length $_[0];
+  unless ($_[0] =~ /[^\x00-\x7F]/) {
+    return $_[0] . '-';
+  }
+  return Web::DomainName::Punycode::URI::_punycode::encode_punycode ($_[0]);
+} # encode_punycode
 
-    sub encode_punycode ($) {
-      return undef unless defined $_[0];
-      local $@;
-      return eval { Encode::decode 'utf-8', Net::LibIDN::idn_punycode_encode (Encode::encode ('utf-8', $_[0]), 'utf-8') };
-    } # encode_punycode
-    
-    sub decode_punycode ($) {
-      return undef unless defined $_[0];
-      local $@;
-      return eval { Encode::decode 'utf-8', Net::LibIDN::idn_punycode_decode ($_[0], 'utf-8') };
-    } # decode_punycode
-
-    1;
-  } or die $@;
-  $UsedModule = 'Net::LibIDN';
-} elsif ($RequestedModule eq 'URI::_punycode') {
-  eval q{
-    use URI::_punycode ();
-
-    sub encode_punycode ($) {
-      return undef if not defined $_[0];
-      return '' unless length $_[0];
-      unless ($_[0] =~ /[^\x00-\x7F]/) {
-        return $_[0] . '-';
-      }
-      return URI::_punycode::encode_punycode ($_[0]);
-    } # encode_punycode
-    
-    sub decode_punycode ($) {
-      return undef if not defined $_[0] or $_[0] eq '-';
-      local $@;
-      return eval { URI::_punycode::decode_punycode ($_[0]) };
-    } # decode_punycode
-
-    1;
-  } or die $@;
-  $UsedModule = 'URI::_punycode';
-} elsif (not $RequestedModule or
-         $RequestedModule eq 'Web::DomainName::URI::_punycode') {
-  eval q{
-    sub encode_punycode ($) {
-      return undef if not defined $_[0];
-      return '' unless length $_[0];
-      unless ($_[0] =~ /[^\x00-\x7F]/) {
-        return $_[0] . '-';
-      }
-      return Web::DomainName::URI::_punycode::encode_punycode ($_[0]);
-    } # encode_punycode
-    
-    sub decode_punycode ($) {
-      return undef if not defined $_[0] or $_[0] eq '-';
-      local $@;
-      return eval { Web::DomainName::URI::_punycode::decode_punycode ($_[0]) };
-    } # decode_punycode
-
-    1;
-  } or die $@;
-  $UsedModule = 'Web::DomainName::URI::_punycode';
-} else {
-  die "Module |$RequestedModule| is not supported";
-}
+sub decode_punycode ($) {
+  return undef if not defined $_[0] or $_[0] eq '-';
+  local $@;
+  return eval { Web::DomainName::Punycode::URI::_punycode::decode_punycode ($_[0]) };
+} # decode_punycode
 
 {
-package Web::DomainName::URI::_punycode;
+package Web::DomainName::Punycode::URI::_punycode;
 
 use strict;
 our $VERSION = "0.03";

@@ -13,14 +13,6 @@ Web::DomainName::Punycode - A wrapper for Punycode encoding and decoding
 The C<Web::DomainName::Punycode> module provides functions to encode and
 decode Punycode.
 
-Although there are a number of Punycode implementations written in
-Perl, they are broken or badly designed (see "Implementation" section
-of <http://suika.fam.cx/~wakaba/wiki/sw/n/Punycode>).
-
-This module is a wrapper of L<Net::LibIDN> (an XS module with
-dependency on GNU LibIDN) or L<URI::_punycode> (a pure-Perl module,
-included in the L<URI> package), one of them selected automatically.
-
 =head1 FUNCTIONS
 
 This module exports two functions:
@@ -50,17 +42,35 @@ Internationalized Domain Names in Applications (IDNA)>, March 2003.
 
 SuikaWiki:Punycode <http://suika.fam.cx/~wakaba/wiki/sw/n/Punycode>.
 
+Although there are a number of Punycode implementations written in
+Perl, they are broken or badly designed (see "Implementation" section
+of <http://suika.fam.cx/~wakaba/wiki/sw/n/Punycode>).  Relatively
+better implementations of Punycode include:
+
 L<Net::LibIDN>.  GNU IDN Library - Libidn <http://www.gnu.org/s/libidn/>.
 
 L<URI::_punycode>.
+
+Previous version of the L<Web::DomainName::Punycode> depend on one of
+these modules.  However, for the ease of deployment, current version
+of the module contains a copy of L<URI::_punycode> such that no XS or
+Perl module is required for encoding and decoding.
 
 =head1 AUTHOR
 
 Wakaba <w@suika.fam.cx>.
 
+=head1 ACKNOWLEDGEMENTS
+
+This module contains a copy of L<URI::_punycode>, whose credit
+contains:
+
+  Tatsuhiko Miyagawa <miyagawa@bulknews.net> is the author of
+  IDNA::Punycode v0.02 which was the basis for this module.
+
 =head1 LICENSE
 
-Copyright 2011 Wakaba <w@suika.fam.cx>.
+Copyright 2011-2012 Wakaba <w@suika.fam.cx>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

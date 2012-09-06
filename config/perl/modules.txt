@@ -3,11 +3,7 @@ Exporter::Lite
 Unicode::Normalize
 Unicode::Stringprep
 
-Net::LibIDN
-URI
-
 Data::Dumper
-Net::LibIDN
 Path::Class
 Test::Class
 Test::Differences

@@ -14,7 +14,7 @@ BEGIN {
 use base qw(test::Web::DomainName::Punycode::common);
 
 sub _module : Test(1) {
-  is $Web::DomainName::Punycode::UsedModule, 'Net::LibIDN';
+  is $Web::DomainName::Punycode::UsedModule, 'Web::DomainName::Punycode::URI::_punycode';
 } # _module
 
 __PACKAGE__->runtests;

@@ -7,7 +7,7 @@ use Test::More;
 
 BEGIN {
   no warnings 'once';
-  $Web::DomainName::Punycode::RequestedModule = 'Web::DomainName::URI::_punycode';
+  $Web::DomainName::Punycode::RequestedModule = 'Web::DomainName::URI::_punycode'; # mama
   require (file (__FILE__)->dir->file ('web-domainname-punycode-common.pl'));
 }
 
@@ -15,7 +15,7 @@ use base qw(test::Web::DomainName::Punycode::common);
 
 sub _module : Test(1) {
   is $Web::DomainName::Punycode::UsedModule,
-      'Web::DomainName::URI::_punycode';
+      'Web::DomainName::Punycode::URI::_punycode';
 } # _module
 
 __PACKAGE__->runtests;
